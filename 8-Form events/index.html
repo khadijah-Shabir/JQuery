@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events using jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body id="test">
+
+    <h1>Form Events using jQuery</h1>
+    <form action="" id="sform">
+        <label for="sname">Name:</label>   
+        <input type="text" id="sname">
+        <br><br>
+        <label for="semail">Email:</label> 
+        <input type="email" id="semail">
+        <br><br>
+        <label for="sclass">Class:</label> 
+        <input type="text" id="sclass">
+        <br><br>
+        <button type="submit">Submit</button>
+        <br><br>
+
+        <label for="scountry">Country:</label>
+        <select id="scountry">
+            <option value="Pakistan">Pakistan</option>
+            <option value="India">India</option>
+            <option value="Australia">Australia</option>
+            <option value="USA">USA</option>
+        </select>
+    </form>
+
+    <div id="selectedCountryDisplay"></div>
+
+    <script>
+        $(document).ready(function(){
+            // Change background color to yellow when focused
+            $('#sname, #semail, #sclass, #scountry').focus(function () {
+                $(this).css("background-color", "yellow");
+            });
+
+            // Remove background color on blur
+            $('#sname, #semail, #sclass, #scountry').blur(function () {
+                $(this).css("background-color", "");
+            })
+        
+
+            $('#scountry').change(function () {
+                var selectedCountry = $(this).val(); // Get selected value
+                $('#selectedCountryDisplay').html("Selected Country: " + selectedCountry); // Display selected country
+            });
+
+            // Submit form and display values in an alert
+            $('form').submit(function(event){
+                event.preventDefault();  // Prevent form from reloading page
+                var name = $('#sname').val();   
+                var email = $('#semail').val();   
+                var classs = $('#sclass').val();   
+                var country = $('#scountry').val(); 
+
+                alert("Name: " + name + "\nEmail: " + email + "\nClass: " + classs + "\nCountry: " + country);
+            });
+        });
+    </script>
+</body>
+</html>

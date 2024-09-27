@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        #box{
+            border: 2px solid black;
+        }
+        .red{
+            background-color: red;
+        }
+
+        .pink{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1> JQUERY addClass and RemoveClass Methods</h1>
+    <div id="box" class="test abc">
+        <h1>Test Box</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit non quos ipsa alias delectus possimus atque veritatis, id aperiam, assumenda cumque quod blanditiis laudantium pariatur? <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, velit?</span></p>
+    </div>
+
+    <button id="addButton">addClass</button>
+    <button id="removeButton">removeClass</button>
+    <button id="toggleButton">toggleClass</button>
+
+    <script>
+        $(document).ready(function(){
+
+            $('#addButton').click(function(){
+                // $('#box').addClass("red  pink");
+                $('#box').addClass("red");
+            });
+            $('#removeButton').click(function(){       
+                $('#box').removeClass("red");
+            });     
+            $('#toggleButton').click(function(){
+                $('#box').toggleClass("red");
+            });
+        });
+    </script>
+
+</body>
+</html>

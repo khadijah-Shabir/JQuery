@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Mouse events using JQuery</h1>
+    <div class="div-2" style="height: 200px; width: 200px; background-color: bisque;"></div>
+        <h1>bye</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquid nobis quas eveniet nostrum sed deserunt? Consectetur reprehenderit vero qui fuga eligendi velit obcaecati asperiores.</p>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function(){
+            $('.div-2').click(function(){
+                $('.div-2').css("background-color","red");
+            });
+
+            $('.div-2').dblclick(function(){
+                $('.div-2').css("background-color","green");
+            });
+
+            $('.div-2').contextmenu(function(){
+                $('.div-2').css("background-color","orange");
+            });
+
+            $('.div-2').mouseenter(function(){
+                $('.div-2').css("background-color","beige");
+            });
+
+            $('.div-2').mouseleave(function(){
+                $('.div-2').css("background-color","tan");
+            })
+
+
+        });
+    </script>
+</body>
+</html>
